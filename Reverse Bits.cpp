@@ -1,4 +1,7 @@
 /*
+
+https://practice.geeksforgeeks.org/problems/reverse-bits3556/1
+
 Given a 32 bit number X, reverse its binary form and print the answer in decimal.
 
 Example 1:
