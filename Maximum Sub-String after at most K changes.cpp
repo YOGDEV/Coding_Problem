@@ -63,7 +63,7 @@ class Solution {
 
 };
 
-
+//_________________________________________________________________________________________________________
 //java code TC(n) and SC(26)
 class Solution
 {
@@ -91,8 +91,43 @@ class Solution
         return ans;
     }
 }
-
-
+//___________________________________________________________________________________________________________
+//one more solution of TC=O(n)
+int characterReplacement(string s, int k){//TC(n)*26=>O(n)
+		    
+		    int m=1;
+		    for(char ch='A';ch<='Z';ch++)
+		    {   int left=0;
+		        int right=0;
+		       int ct=0; 
+		       while(right<s.size())
+		       {
+		           if(s[right]==ch)
+		           {
+		               m=max(m,right-left+1);right++;
+		           }
+		           else 
+		           {
+		               if(ct<k)
+		               {
+		                    ct++;
+		                    m=max(m,right-left+1);  right++;
+		               }
+		               else
+		               {
+		                   while(left<s.size()&& s[left]==ch){
+		                   left++;
+		                   }
+		                   left++;
+		                   ct--;
+		               }
+		           }
+		       }
+		    }
+		    return m;
+		       
+		}
+//_________________________________________________________________________________________________________________
 //tle solution
 TC(n^2)
 class Solution {
