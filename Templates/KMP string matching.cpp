@@ -24,19 +24,19 @@ vector<int> kmp(string& s)
         //KMP
         int n=nums.size(),m=pattern.size(),ans=0;
         string ps="",ns="";//ps -> pattern string
-        for(int i=0;i<m;i++)
-        {
-            if(pattern[i]==1)ps.push_back('a');
-            if(pattern[i]==0)ps.push_back('s');
-            if(pattern[i]==-1)ps.push_back('d');
-        }
+        // for(int i=0;i<m;i++)                  Modify your strings if needed as per of the questions
+        // {
+        //     if(pattern[i]==1)ps.push_back('a');
+        //     if(pattern[i]==0)ps.push_back('s');
+        //     if(pattern[i]==-1)ps.push_back('d');
+        // }
 
-        for(int i=0;i<n-1;i++)
-        {
-            if(nums[i+1]-nums[i] > 0)ns.push_back('a');
-            if(nums[i+1]-nums[i] == 0)ns.push_back('s');
-            if(nums[i+1]-nums[i] < 0)ns.push_back('d');
-        }
+        // for(int i=0;i<n-1;i++)
+        // {
+        //     if(nums[i+1]-nums[i] > 0)ns.push_back('a');
+        //     if(nums[i+1]-nums[i] == 0)ns.push_back('s');
+        //     if(nums[i+1]-nums[i] < 0)ns.push_back('d');
+        // }
 
         string hash_string = ps + "#" + ns;
         vector<int> lps=kmp(hash_string);
@@ -47,4 +47,5 @@ vector<int> kmp(string& s)
               ---------------------
               --------------------Your logic now to implement
             }
+        //for getting the index of starting index of matching string in the major string do this, ind = i - 2*( patter.size() ),where i starts from m, size of pattern
     }
