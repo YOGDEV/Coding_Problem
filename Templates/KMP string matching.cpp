@@ -11,7 +11,7 @@ vector<int> kmp(string& s)
 
         for(int i=1;i<n;i++)
         {
-            int pre_index = lps[i-1];
+            int pre_index = lps[i-1];//here lps vector gives the length of the matching string at the ith position or at till s[i] character included
 
             while(pre_index > 0 and (s[i] != s[pre_index]))
                 pre_index = lps[pre_index-1];
